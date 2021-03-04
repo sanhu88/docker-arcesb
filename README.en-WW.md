@@ -34,7 +34,7 @@ Docker file for ArcESB™ Connet(aka RssBus before)
 3. Copy the configuration file in the container to the host
 
    ~~~bash
-   docker cp arcesb:/usr/local/tomcat/conf/ /Your/Host/Path/Save/conf
+   docker cp arcesb:/usr/local/tomcat/conf/ /Your/Host/Path/Save/tomcat/conf
    ~~~
 
 4. Delete the container 
