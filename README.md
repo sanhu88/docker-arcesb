@@ -32,7 +32,7 @@ Docker file for ArcESB™ Connet(aka RssBus before)
 3. 复制容器内配置文件到宿主机
 
    ~~~bash
-   docker cp arcesb:/usr/local/tomcat/conf/ /Your/Host/Path/Save/conf
+   docker cp arcesb:/usr/local/tomcat/conf/ /Your/Host/Path/Save/tomcat/conf
    ~~~
 
 4. 删除容器
@@ -44,13 +44,13 @@ Docker file for ArcESB™ Connet(aka RssBus before)
 5. 挂载配置文件，第二次运行容器
 
    ~~~bash
-   docker run -itd --name arcesb -p 8888:8080 -v /root/rssbu/xiaojia/tomcat/conf/:/usr/local/tomcat/conf/ -v /root/rssbu/xiaojia/tomcat/logs:/usr/local/tomcat/logs -v /root/rssbu/xiaojia/arcesb:/root/arcesb xiaojia/arcesb:20.0.7681
+   docker run -itd --name arcesb -p 8888:8080 -v /Your/Host/Path/Save/tomcat/conf/:/usr/local/tomcat/conf/ -v /Your/Host/Path/Save/tomcat/logs:/usr/local/tomcat/logs -v /Your/Host/Path/Save/arcesb:/root/arcesb xiaojia/arcesb:20.0.7681
    ~~~
 
 6. 添加登录账号(请替换name和password的值)
 
    ~~~bash
-   nano /Your/Host/Path/Save/conf/tomcat-users.xml
+   nano /Your/Host/Path/Save/tomcat/conf/tomcat-users.xml
    
    ...
    	<user name="YourLoginAccount" password="YourPassWordxxxx" roles="arcesb_admin,admin-gui,manager-gui,manager-status,manager-script,manager-jmx" />

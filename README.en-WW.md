@@ -46,13 +46,13 @@ Docker file for ArcESB™ Connet(aka RssBus before)
 5. Mount the configuration file and run the container a second time
 
    ~~~bash
-   docker run -itd --name arcesb -p 8888:8080 -v /root/rssbu/xiaojia/tomcat/conf/:/usr/local/tomcat/conf/ -v /root/rssbu/xiaojia/tomcat/logs:/usr/local/tomcat/logs -v /root/rssbu/xiaojia/arcesb:/root/arcesb xiaojia/arcesb:20.0.7681
+   docker run -itd --name arcesb -p 8888:8080 -v /Your/Host/Path/Save/tomcat/conf/:/usr/local/tomcat/conf/ -v /Your/Host/Path/Save/tomcat/logs:/usr/local/tomcat/logs -v /Your/Host/Path/Save/arcesb:/root/arcesb xiaojia/arcesb:20.0.7681
    ~~~
 
 6. Add web page login account (please replace the name and password values)
 
    ~~~bash
-   nano /Your/Host/Path/Save/conf/tomcat-users.xml
+   nano /Your/Host/Path/Save/tomcat/conf/tomcat-users.xml
    
    ...
    	<user name="YourLoginAccount" password="YourPassWordxxxx" roles="arcesb_admin,admin-gui,manager-gui,manager-status,manager-script,manager-jmx" />
